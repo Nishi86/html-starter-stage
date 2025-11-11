@@ -70,9 +70,8 @@
   <br />
   <br />
   <br />
-    <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js" async></script>
-  <div class="cleverpush-widget" data-id="qZq8pzr8dC2GvQ3be"></div>
-  <script>window.cleverpushEmailConfig = { channelId: 'zsKod4ggm8r8XzCev', apiEndpoint: 'https://api-stage.cleverpush.com' };</script>
+  <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js" async></script>
+  
   
   <!-- <script src="https://static.cleverpush.com/sdk/cleverpush-survey.stage.js" async></script>
 <div class="cleverpush-survey" data-id="4z5dapxvLzowMCbK4"></div> -->
@@ -80,24 +79,15 @@
   <!-- <div class="cleverpush-email-form" data-id="Wxy4jPDfyg2Ht65AK"></div> -->
   
   <script>
-    CleverPush = window.CleverPush || [];
+   
     CleverPush.init({
-      channelId: 'ByfNxRPcs8ZcGAsyv', // replace with channel ID from cleverpush-app
+      channelId: 'gc2ybZCG6NPxre2xJ', // replace with channel ID from cleverpush-app
       apiEndpoint: 'https://api-stage.cleverpush.com',
       loadIframe: false,
       autoRegister: false,
       showNotificationBell: true,
     });
-    document.getElementById('testNullParams')?.addEventListener('click', function () {
-      console.log('Testing null/undefined parameter handling...');
-      CleverPush.push(['trackEvent', 'test404', {
-        ziel: 'Türkische Riviera',
-        url: "https://www.holidaycheck.de/dh/hotels-tuerkische-riviera/759656ea-f8a5-3c67-aeb8-d37ecda767e1",
-        testingURL: 'https://www.holidaycheck.de/dh/hotels-tuerkische-riviera/759656ea-f8a5-3c67-aeb8-d37ecda767e1',
-        testingHeadline: "Breaking news from Turkey"
-      }]);
-      console.log('Event sent with null/undefined parameters');
-    });
+    
   </script>
 </body>
 
