@@ -1,122 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
-  <script>
-    if ('serviceWorker' in navigator) {<!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js').then(() => {
-        console.log('Service Worker registered successfully.');
-      }).catch((error) => {
-        console.error('Service Worker registration failed:', error);
-      });
-    }
-  </script>
-</head>
-
-<body>
-  <header>
-    <h1 class='title'>CleverPush</h1>
-  </header>
- 
-  <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
-  <script src="https://static.cleverpush.com/sdk/cleverpush-chat.stage.js"></script>
-  
-
-  <script>
-    CleverPush.init({
-      channelId: 'ByfNxRPcs8ZcGAsyv', // replace with channel ID from cleverpush-app
-      apiEndpoint: 'https://api-stage.cleverpush.com',
-      loadIframe: false,
-      autoRegister: true,
-      showNotificationBell: true,
-    });  
-  </script>
-  <script>
-    CleverPush = window.CleverPush || [];
-    CleverPush.push(['trackEvent', 'view_item_list']);
-  </script>
-</body>
-
-</html>
-      navigator.serviceWorker.register('service-worker.js').then(() => {
-        console.log('Service Worker registered successfully.');
-      }).catch((error) => {
-        console.error('Service Worker registration failed:', error);
-      });
-    }
-  </script>
-</head>
-
-<body>
-  <header>
-    <h1 class='title'>CleverPush</h1>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="features.html">Features</a>
-  </nav>
- 
-  <div class="cleverpush-multi-platform-widget" data-button-text="Receive Push Notifications" data-button-text-subscribed="Subscribed to Push Notifications" data-button-background-color="#42a2f2" data-button-color="#ffffff"></div>
-  <footer>
-    <p>© 2024 Your Website</p>
-  </footer>
-<script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
-  <script src="https://static.cleverpush.com/channel/loader/gc2ybZCG6NPxre2xJ.js" async></script>
-  <div class="cleverpush-widget" data-id="LkpsJmPQHnWxzgXFG"></div>
-  <br />
-  <br />
-<!-- <div class="cleverpush-email-form" data-id="KeFAxfowyzGhQNNJm"></div> -->
-  <br />
-  <br />
-  <br />
-  <br />
- <div class="cleverpush-content-button" data-type="button-simple" data-button-text="Receive Push Notifications" data-button-text-subscribed="Subscribed to Push Notifications" data-button-background-color="#42a2f2" data-button-color="#ffffff"></div>
-  <br />
-  <br />
-  <br />
-  <br /> 
-  <br />
-  <br />
-  <br />
-  <br />
-  <!-- <script src="https://static.cleverpush.com/sdk/cleverpush-email.stage.js" async></script>
-  <script>window.cleverpushEmailConfig = { channelId: 'gc2ybZCG6NPxre2xJ' };</script>
-  <!-- <div class="cleverpush-email-form" data-id="KeFAxfowyzGhQNNJm"></div> -->
-  
-  
-  <!-- <script src="https://static.cleverpush.com/sdk/cleverpush-survey.stage.js" async></script>
-<div class="cleverpush-survey" data-id="4z5dapxvLzowMCbK4"></div> -->
-
-  <!-- <div class="cleverpush-email-form" data-id="Wxy4jPDfyg2Ht65AK"></div> -->
-  
-  <script>
-   
-    CleverPush.init({
-      channelId: 'gc2ybZCG6NPxre2xJ', // replace with channel ID from cleverpush-app
-      apiEndpoint: 'https://api-stage.cleverpush.com',
-      loadIframe: false,
-      autoRegister: false,
-      showNotificationBell: true,
-    });
+  <body>
+    <div id="revenue">50</div>
+    <script src="https://static.cleverpush.com/sdk/cleverpush.js"></script>
+    <div class="cleverpush-widget" data-id="qEG28DnaPocEqodg2"></div>
+     
+    <!-- <script src="https://static.cleverpush.com/sdk/cleverpush.js"></script> 
+    <div class="cleverpush-widget" data-id="qEG28DnaPocEqodg2"></div> -->
+     
+    <!-- <div class="cleverpush-content-button" data-type="button-simple" data-button-text="Receive Push Notifications" data-button-text-subscribed="Subscribed to Push Notifications" data-button-background-color="#42a2f2" data-button-color="#ffffff"></div> -->
     
-  </script>
-</body>
+    <button class="testoptin">tesgudg</button>
+    <button type="submit" class="booking-button">Book Now</button>
+    <script>
+      CleverPush.init({
+        channelId: 'zsKod4ggm8r8XzCev',
+        apiEndpoint: 'https://api.cleverpush.com',
+        autoRegister: true,
+        showNotificationBell: true,
+      });
+    </script>
+    <script>
+CleverPush = window.CleverPush || [];
+CleverPush.push(['trackEvent', 'Conversion event 2']);
+</script>
 
+  </body>
 </html>
