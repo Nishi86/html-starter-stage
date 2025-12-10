@@ -8,7 +8,51 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
   <script>
+    if ('serviceWorker' in navigator) {<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <script>
     if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js').then(() => {
+        console.log('Service Worker registered successfully.');
+      }).catch((error) => {
+        console.error('Service Worker registration failed:', error);
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1 class='title'>CleverPush</h1>
+  </header>
+ 
+  <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
+  <script src="https://static.cleverpush.com/sdk/cleverpush-chat.stage.js"></script>
+  
+
+  <script>
+    CleverPush.init({
+      channelId: 'ByfNxRPcs8ZcGAsyv', // replace with channel ID from cleverpush-app
+      apiEndpoint: 'https://api-stage.cleverpush.com',
+      loadIframe: false,
+      autoRegister: true,
+      showNotificationBell: true,
+    });  
+  </script>
+  <script>
+    CleverPush = window.CleverPush || [];
+    CleverPush.push(['trackEvent', 'view_item_list']);
+  </script>
+</body>
+
+</html>
       navigator.serviceWorker.register('service-worker.js').then(() => {
         console.log('Service Worker registered successfully.');
       }).catch((error) => {
