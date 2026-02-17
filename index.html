@@ -14,15 +14,9 @@ allowTransparency="true">
 </iframe>
     
     <div id="revenue">50</div>
-    <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
-    <!-- <div class="cleverpush-widget" data-id="fjnKs7sZKa8KXEgak"></div>
-    <div class="cleverpush-multi-platform-widget" data-button-text="Receive Push Notifications" data-button-text-subscribed="Subscribed to Push Notifications" data-button-background-color="#42a2f2" data-button-color="#ffffff"></div> -->
-    <!-- Tag generation test: use these sections to test "Extract from" in CleverPush -->
-    <!-- <script src="https://static.cleverpush.com/sdk/cleverpush.js"></script> 
+    <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script> 
     <div class="cleverpush-widget" data-id="qEG28DnaPocEqodg2"></div> -->
-    <!-- <div class="cleverpush-content-button" data-type="button-simple" data-button-text="Receive Push Notifications" data-button-text-subscribed="Subscribed to Push Notifications" data-button-background-color="#42a2f2" data-button-color="#ffffff"></div> -->
-    <!-- <button class="testoptin">tesgudg</button>
-    <button type="submit" class="booking-button">Book Now</button> -->
+    
     <script>
       CleverPush.init({
         channelId: 'X4Eez4xGFN2KRMK3j',
@@ -30,34 +24,6 @@ allowTransparency="true">
         autoRegister: true,
         showNotificationBell: true,
       });
-
-      const iframe = document.querySelector('#cleverpush-editor');
-    
-    let getNotificationCallback;
-  
-    window.addEventListener('message', (e) => {
-      if (e.data && e.data.type === 'CP_READY') {
-        iframe.contentWindow.postMessage({
-          type: 'CP_SET_DATA',
-          notification: {/* NOTIFICATION DATA HERE */},
-          apiKey: 'G7xfoiw4SPwtX3pp65pj7uucFrdjdxuh', // API KEY HERE
-          channelId: 'X4Eez4xGFN2KRMK3j', // CHANNEL ID HERE
-          // authenticate: true,
-        }, '*');
-      }
-  
-      if (e.data && e.data.type === 'CP_GET_DATA') {
-        console.log('CP_GET_DATA', e.data);
-        if (getNotificationCallback) {
-          getNotificationCallback(e.data.notification);
-          getNotificationCallback = null;
-        }
-      }
-  
-      if (e.data && e.data.type === 'CP_ON_SAVE') {
-        // Save button clicked
-      }
-    });
     </script>
     <!-- <script>
 CleverPush = window.CleverPush || [];
