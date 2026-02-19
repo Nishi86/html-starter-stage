@@ -1,38 +1,31 @@
+
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  </head>
-
-  <body>
-
-    <script src="https://stage.cleverpush.com/cleverpush.js"></script>
-<!-- <iframe src="https://stage.cleverpush.com/en/notification-editor/embed" style="width: 100%; height: 100%;"
-id="cleverpush-editor"
-allowTransparency="true">
-</iframe> -->
+  
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  
+</head>
+  
+  <body>   
+  <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js" async></script>
+  <script>window.cleverpushEmailConfig = { channelId: 'qEG28DnaPocEqodg2', apiEndpoint: 'https://api-stage.cleverpush.com' };</script>  
+  <div id="revenue">50</div>
+  <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
+  <div class="cleverpush-widget" data-id="qEG28DnaPocEqodg2"></div>
+  <script>
     
-    <div id="revenue">50</div>
-    <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js" async></script>
-    <div class="cleverpush-widget" data-id="qEG28DnaPocEqodg2"></div>
+    CleverPush.init({
+      channelId: 'ByfNxRPcs8ZcGAsyv',
+      apiEndpoint: 'https://api-stage.cleverpush.com',
+      autoRegister: true,
+      showNotificationBell: true,
+    });
     
-    <!-- <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script> 
-    <div class="cleverpush-widget" data-id="qEG28DnaPocEqodg2"></div> --> 
+  </script>
     
-    <script>
-      CleverPush.init({
-        channelId: 'ByfNxRPcs8ZcGAsyv',
-        apiEndpoint: 'https://api-stage.cleverpush.com',
-        autoRegister: true,
-        showNotificationBell: true,
-      });
-    </script>
-    <!-- <script>
-CleverPush = window.CleverPush || [];
-CleverPush.push(['trackEvent', 'Conversion event 2']);
-      CleverPush.push(['triggerFollowUpEvent', 'LK8Hn8awXiDXKo9E7', 'triggerEvent', { productAmount: 2500.00, productName: 'iMac' }]);
-</script> -->
-
   </body>
+  
 </html>
