@@ -19,6 +19,58 @@
     
   <div id="revenue">50</div>
   <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
+
+      <!-- Consentmanager mock for testing optInWaitForTcfDecision fix -->
+  <script>
+    (function () {
+      var listeners = {};
+      var nextId = 1;
+
+      window.__tcfapi = function (command, version, callback, listenerId) {
+        if (command === 'addEventListener') {
+          var id = nextId++;
+          listeners[id] = { cb: callback, id: id };
+          // Simulate new visitor: CMP banner is currently showing, no tcString yet
+          callback({ tcString: '', eventStatus: 'cmpuishown', listenerId: id, vendor: { consents: {} } }, true);
+          console.log('[CMP Mock] addEventListener fired with cmpuishown (new visitor). Listener id:', id);
+        } else if (command === 'removeEventListener') {
+          delete listeners[listenerId];
+          console.log('[CMP Mock] removeEventListener called for id:', listenerId, '— remaining listeners:', Object.keys(listeners).length);
+          if (typeof callback === 'function') callback(true);
+        }
+      };
+
+      // Consentmanager also exposes __cmp — needed so SDK picks the Consentmanager code path in tcf.js
+      window.__cmp = function () { };
+
+      // Call from console or buttons below to simulate user accepting/declining the CMP banner
+      window.simulateCMPAccept = function () {
+        console.log('[CMP Mock] Simulating user ACCEPT. Active listeners:', Object.keys(listeners).length);
+        Object.values(listeners).forEach(function (l) {
+          l.cb({ tcString: 'CPteststring', eventStatus: 'useractioncomplete', listenerId: l.id, vendor: { consents: {} } }, true);
+        });
+      };
+      window.simulateCMPDecline = function () {
+        console.log('[CMP Mock] Simulating user DECLINE. Active listeners:', Object.keys(listeners).length);
+        Object.values(listeners).forEach(function (l) {
+          l.cb({ tcString: 'CPdeclined', eventStatus: 'useractioncomplete', listenerId: l.id, vendor: { consents: {} } }, true);
+        });
+      };
+    })();
+  </script>
+
+  <!-- CMP test controls -->
+  <div style="position:fixed;bottom:16px;right:16px;z-index:99999;display:flex;gap:8px;font-family:sans-serif">
+    <button onclick="simulateCMPAccept()"
+      style="padding:10px 16px;background:#2ac73e;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px">
+      ✅ Accept CMP
+    </button>
+    <button onclick="simulateCMPDecline()"
+      style="padding:10px 16px;background:#c22626;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px">
+      ❌ Decline CMP
+    </button>
+  </div>
+    
   <script>
     
     CleverPush.init({
