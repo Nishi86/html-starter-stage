@@ -34,6 +34,38 @@
     <div class="cleverpush-widget" data-id="qEG28DnaPocEqodg2"></div>
 
     <h1>Home Page</h1>
+
+    -----------
+    <button class="test-button" onclick="
+      var ua = navigator.userAgent;
+      var out = document.getElementById('ua-output');
+      out.textContent = ua;
+      out.style.display = 'block';
+      navigator.clipboard && navigator.clipboard.writeText(ua);
+    ">Copy User Agent</button>
+    -------------
+    <pre id="ua-output"
+      style="display:none;margin-top:10px;padding:12px;background:#f0f7ff;border:1px solid #bcd;border-radius:8px;word-break:break-all;white-space:pre-wrap;font-size:13px"></pre>
+
+    <div style="margin-top:16px;padding:14px;background:#fff8e1;border:1px solid #f0c040;border-radius:8px;max-width:520px">
+      <strong>Simulate custom User Agent</strong>
+      <p style="font-size:13px;margin:6px 0 10px">Type any UA string and click <em>Apply</em> — the SDK will see it as the browser's user agent on the next init.</p>
+      <input id="custom-ua-input" type="text" placeholder="e.g. MyCompanyApp/1.0"
+        style="width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;font-size:13px;box-sizing:border-box" />
+      <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="test-button" onclick="
+          var customUa = document.getElementById('custom-ua-input').value.trim();
+          if (!customUa) { alert('Please enter a user agent string'); return; }
+          Object.defineProperty(navigator, 'userAgent', { get: function() { return customUa; }, configurable: true });
+          document.getElementById('active-ua').textContent = 'Active UA: ' + customUa;
+          document.getElementById('active-ua').style.display = 'block';
+        ">Apply UA</button>
+        <button class="test-button" onclick="
+          document.getElementById('custom-ua-input').value = 'Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36 MyCompanyApp/1.0';
+        ">Fill Android + MyCompanyApp example</button>
+      </div>
+      <small id="active-ua" style="display:none;margin-top:8px;color:#555;word-break:break-all;display:block"></small>
+    </div>
   </div>
 
   <footer>
