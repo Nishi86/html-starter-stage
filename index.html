@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <!-- CSP to allow ngrok assets for development -->
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
+  <meta name="p:domain_verify" content="1f7370b65904f5308f4469454e3021a6" />
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js').then(() => {
@@ -20,75 +20,77 @@
 </head>
 
 <body>
-  <script src="https://static.cleverpush.com/channel/loader/ByfNxRPcs8ZcGAsyv.stage.js" async></script>
   <header>
     <h1 class='title'>CleverPush</h1>
   </header>
   <nav>
     <a href="index.html">Home</a>
+    <a href="products/index.html">Shop</a>
+    <a href="shipping.html">Shipping</a>
+    <a href="returns.html">Returns</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="features.html">Features</a>
   </nav>
-
   <div class="container">
-    <div class="cleverpush-widget" data-id="7EE3bcbb5ZbNHeRcP"></div>
-    <div class="cleverpush-widget" data-id="qZq8pzr8dC2GvQ3be"></div>
-
-    <h1>Home Page</h1>
-<!-- <div class="cleverpush-story-widget" data-id="rMLKN7eczuGcx6bsc"></div> -->
-    <!-- <div class="cleverpush-email-form" data-id="KeFAxfowyzGhQNNJm"></div> -->
-    <!-- -----------
-    <button class="test-button" onclick="
-      var ua = navigator.userAgent;
-      var out = document.getElementById('ua-output');
-      out.textContent = ua;
-      out.style.display = 'block';
-      navigator.clipboard && navigator.clipboard.writeText(ua);
-    ">Copy User Agent</button>
-    -------------
-    <pre id="ua-output"
-      style="display:none;margin-top:10px;padding:12px;background:#f0f7ff;border:1px solid #bcd;border-radius:8px;word-break:break-all;white-space:pre-wrap;font-size:13px"></pre>
-
-    <div style="margin-top:16px;padding:14px;background:#fff8e1;border:1px solid #f0c040;border-radius:8px;max-width:520px">
-      <strong>Simulate custom User Agent</strong>
-      <p style="font-size:13px;margin:6px 0 10px">Type any UA string and click <em>Apply</em> — the SDK will see it as the browser's user agent on the next init.</p>
-      <input id="custom-ua-input" type="text" placeholder="e.g. MyCompanyApp/1.0"
-        style="width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;font-size:13px;box-sizing:border-box" />
-      <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
-        <button class="test-button" onclick="
-          var customUa = document.getElementById('custom-ua-input').value.trim();
-          if (!customUa) { alert('Please enter a user agent string'); return; }
-          Object.defineProperty(navigator, 'userAgent', { get: function() { return customUa; }, configurable: true });
-          document.getElementById('active-ua').textContent = 'Active UA: ' + customUa;
-          document.getElementById('active-ua').style.display = 'block';
-        ">Apply UA</button>
-        <button class="test-button" onclick="
-          document.getElementById('custom-ua-input').value = 'Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36 MyCompanyApp/1.0';
-        ">Fill Android + MyCompanyApp example</button>
-      </div>
-      <small id="active-ua" style="display:none;margin-top:8px;color:#555;word-break:break-all;display:block"></small>
-    </div>
+    <h1>Home</h1>
+    <div class="cleverpush-survey" data-id="dWDo8sz7WsvydEZ7Z"></div>
+    <div class="cleverpush-chat-target"></div>
+    <script src="https://static.cleverpush.com/sdk/cleverpush-story.stage.js" async></script>
+    <div class="cleverpush-story-widget" data-id="h3fj7vuSb4ic8mw5w"></div>
+    <p><strong>Demo Store</strong> sells <strong>physical products</strong> (clothing, homeware) that we ship to your
+      address. <a href="products/index.html">Browse the shop</a> for items with visible prices and add-to-cart.</p>
+    <section>
+      <button id="testNullParams" class="btn btn-primary" style="margin: 5px;">
+        Test Null Parameters
+      </button>
+      <h2>Latest News</h2>
+      <p>Stay updated with the latest news from our industry. We regularly update this section with the most relevant
+        and recent developments.</p>
+    </section>
+    <div class="cleverpush-widget" data-id="9GeohreKPcq4aowt5"></div>
+    <section>
+      <h2>Our mission</h2>
+      <p>We focus on quality physical goods, reliable delivery, and clear return options — see <a
+          href="shipping.html">shipping</a> and <a href="returns.html">returns</a>.</p>
+    </section>
+    <section>
+      <h2>Shop</h2>
+      <p><a class="btn-buy" href="products/index.html">Go to product catalog</a></p>
+    </section>
   </div>
-
+  <div class="cleverpush-email-form" data-id="8riDbcSmF4WbZTCgb"></div>
   <footer>
-    <p>© 2024 Your Website</p>
-  </footer> -->
-<script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
-<!-- <script src="https://static.cleverpush.com/sdk/cleverpush-story.stage.js" async></script> -->
-<!-- <script>window.cleverpushEmailConfig = { channelId: 'bBt9azfRPYTLfmo6B' };</script>
-<script src="https://static.cleverpush.com/sdk/cleverpush-email.stage.js" async></script> -->
-
-
-  <!-- <script src="https://static.cleverpush.com/sdk/cleverpush-chat.stage.js"></script> -->
-
+    <p>© 2024 Demo Store — <a href="shipping.html">Shipping</a> · <a href="returns.html">Returns</a> · <a
+        href="contact.html">Contact</a></p>
+  </footer>
+  <br />
+  <br />
+  <br />
+  <script src="https://static.cleverpush.com/channel/loader/GBLTKej2jdk4zrnKP.stage.js" async></script>
+  <script>window.cleverpushEmailConfig = { channelId: '4rSq37XiGFcYS7fS7', apiEndpoint: 'https://api-stage.cleverpush.com' };</script>
+  <script src="https://static.cleverpush.com/sdk/cleverpush-email.stage.js" async></script>
+  <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
+  <script src="https://static.cleverpush.com/sdk/cleverpush-chat.stage.js"></script>
+  <script src="https://static.cleverpush.com/sdk/cleverpush-survey.stage.js" async></script>
   <script>
+    CleverPush = window.CleverPush || [];
     CleverPush.init({
-      channelId: 'ByfNxRPcs8ZcGAsyv',
+      channelId: 'GBLTKej2jdk4zrnKP', // replace with channel ID from cleverpush-app
       apiEndpoint: 'https://api-stage.cleverpush.com',
       loadIframe: false,
       autoRegister: true,
       showNotificationBell: true,
+    });
+    document.getElementById('testNullParams')?.addEventListener('click', function () {
+      console.log('Testing null/undefined parameter handling...');
+      CleverPush.push(['trackEvent', 'test404', {
+        ziel: 'Türkische Riviera',
+        url: "https://www.holidaycheck.de/dh/hotels-tuerkische-riviera/759656ea-f8a5-3c67-aeb8-d37ecda767e1",
+        testingURL: 'https://www.holidaycheck.de/dh/hotels-tuerkische-riviera/759656ea-f8a5-3c67-aeb8-d37ecda767e1',
+        testingHeadline: "Breaking news from Turkey"
+      }]);
+      console.log('Event sent with null/undefined parameters');
     });
   </script>
 </body>
