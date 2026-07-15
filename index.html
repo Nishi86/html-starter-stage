@@ -1,105 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
-  <meta name="p:domain_verify" content="1f7370b65904f5308f4469454e3021a6" />
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js').then(() => {
-        console.log('Service Worker registered successfully.');
-      }).catch((error) => {
-        console.error('Service Worker registration failed:', error);
-      });
-    }
-  </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
-
-<body>
-  <header>
-    <h1 class='title'>CleverPush</h1>
-    
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products/index.html">Shop</a>
-    <a href="shipping.html">Shipping</a>
-    <a href="returns.html">Returns</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="features.html">Features</a>
-  </nav>
-  <div class="container">
-    <h1>Home</h1>
-    
-<!-- <div class="cp_banner_nn_home">
-            "Hier sollte das Cleverpush-Banner kommen."
-          </div> -->
-   
-    <div class="cleverpush-survey" data-id="dWDo8sz7WsvydEZ7Z"></div>
-    <div class="cleverpush-chat-target"></div>
-    <script src="https://static.cleverpush.com/sdk/cleverpush-story.stage.js" async></script>
-    <div class="cleverpush-story-widget" data-id="h3fj7vuSb4ic8mw5w"></div>
-    <p><strong>Demo Store</strong> sells <strong>physical products</strong> (clothing, homeware) that we ship to your
-      address. <a href="products/index.html">Browse the shop</a> for items with visible prices and add-to-cart.</p>
-    <section>
-      <button id="testNullParams" class="btn btn-primary" style="margin: 5px;">
-        Test Null Parameters
-      </button>
-      <h2>Latest News</h2>
-      <p>Stay updated with the latest news from our industry. We regularly update this section with the most relevant
-        and recent developments.</p>
-    </section>
-    <div class="cleverpush-widget" data-id="9GeohreKPcq4aowt5"></div>
-    <section>
-      <h2>Our mission</h2>
-      <p>We focus on quality physical goods, reliable delivery, and clear return options — see <a
-          href="shipping.html">shipping</a> and <a href="returns.html">returns</a>.</p>
-    </section>
-    <section>
-      <h2>Shop</h2>
-      <p><a class="btn-buy" href="products/index.html">Go to product catalog</a></p>
-    </section>
-  </div>
-  <div class="cleverpush-email-form" data-id="hMnFyHwh45oQJ6fyH"></div>
-  <footer>
-    <p>© 2024 Demo Store — <a href="shipping.html">Shipping</a> · <a href="returns.html">Returns</a> · <a
-        href="contact.html">Contact</a></p>
-  </footer>
-  <br />
-  <br />
-  <br />
-  <script src="https://static.cleverpush.com/channel/loader/GBLTKej2jdk4zrnKP.stage.js" async></script>
-  <script>window.cleverpushEmailConfig = { channelId: 'bBt9azfRPYTLfmo6B', apiEndpoint: 'https://api-stage.cleverpush.com' };</script>
-  <script src="https://static.cleverpush.com/sdk/cleverpush-email.stage.js" async></script>
-  <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
-  <script src="https://static.cleverpush.com/sdk/cleverpush-chat.stage.js"></script>
-  <script src="https://static.cleverpush.com/sdk/cleverpush-survey.stage.js" async></script>
-  <script>
-    CleverPush = window.CleverPush || [];
-    CleverPush.init({
-      channelId: 'gc2ybZCG6NPxre2xJ', // replace with channel ID from cleverpush-app
-      apiEndpoint: 'https://api-stage.cleverpush.com',
-      loadIframe: false,
-      autoRegister: true,
-      showNotificationBell: true,
-    });
-    document.getElementById('testNullParams')?.addEventListener('click', function () {
-      console.log('Testing null/undefined parameter handling...');
-      CleverPush.push(['trackEvent', 'test404', {
-        ziel: 'Türkische Riviera',
-        url: "https://www.holidaycheck.de/dh/hotels-tuerkische-riviera/759656ea-f8a5-3c67-aeb8-d37ecda767e1",
-        testingURL: 'https://www.holidaycheck.de/dh/hotels-tuerkische-riviera/759656ea-f8a5-3c67-aeb8-d37ecda767e1',
-        testingHeadline: "Breaking news from Turkey"
-      }]);
-      console.log('Event sent with null/undefined parameters');
-      
-    });
-  </script>
-</body>
-
+  <body>
+  <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
+  <div class="cleverpush-widget" data-id="qZq8pzr8dC2GvQ3be"></div>
+  <script>
+    CleverPush.init({
+      channelId: 'gc2ybZCG6NPxre2xJ',
+      apiEndpoint: 'https://api-stage.cleverpush.com',
+      autoRegister: true,
+      showNotificationBell: true,
+    });
+  </script>
+  </body>
 </html>
