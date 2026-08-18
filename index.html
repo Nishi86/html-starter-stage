@@ -1,25 +1,79 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-</head>
-  <body>
-      <script src="https://static.cleverpush.com/channel/loader/gc2ybZCG6NPxre2xJ.stage.js" async></script>
-  <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
-  <!-- <div class="cleverpush-widget" data-id="pAD4SG58K79dpAtpa"></div>
-    <div class="cleverpush-widget" data-id="oEhCri89WohQg8WRa"></div> -->
-<script>window.cleverpushEmailConfig = { channelId: 'bBt9azfRPYTLfmo6B' };</script>
-<script src="https://static.cleverpush.com/sdk/cleverpush-email.stage.js" async></script>
+<html lang="en">
 
-<div class="cleverpush-email-form" data-id="KeFAxfowyzGhQNNJm"></div>
-      
-  <script>
-    CleverPush.init({
-      channelId: 'gc2ybZCG6NPxre2xJ',
-      apiEndpoint: 'https://api-stage.cleverpush.com',
-      autoRegister: true,
-      showNotificationBell: true,
-    });
-  </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js').then(() => {
+        console.log('Service Worker registered successfully.');
+      }).catch((error) => {
+        console.error('Service Worker registration failed:', error);
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1 class='title'>CleverPush</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products/index.html">Shop</a>
+    <a href="shipping.html">Shipping</a>
+    <a href="returns.html">Returns</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="features.html">Features</a>
+  </nav>
+  <div class="container">
+    <h1>Home</h1>
+    <h2>cleverpush-widget</h2>
+    <p><strong>Demo Store</strong> sells <strong>physical products</strong> (clothing, homeware) that we ship to your
+      address. <a href="products/index.html">Browse the shop</a> for items with visible prices and add-to-cart.</p>
+    <section>
+      <button id="testNullParams" class="btn btn-primary" style="margin: 5px;">
+        Test Null Parameters
+      </button>
+      <h2>Latest News</h2>
+      <p>Stay updated with the latest news from our industry. We regularly update this section with the most relevant
+        and recent developments.</p>
+    </section>
+    <section>
+      <h2>Our mission</h2>
+      <p>We focus on quality physical goods, reliable delivery, and clear return options — see <a
+          href="shipping.html">shipping</a> and <a href="returns.html">returns</a>.</p>
+    </section>
+    <section>
+      <h2>Shop</h2>
+      <p><a class="btn-buy" href="products/index.html">Go to product catalog</a></p>
+    </section>
+  </div>
+  <footer>
+    <p>© 2024 Demo Store — <a href="shipping.html">Shipping</a> · <a href="returns.html">Returns</a> · <a
+        href="contact.html">Contact</a></p>
+  </footer>
+  <br />
+  <br />
+  <br />
+  <script src="https://static.cleverpush.com/channel/loader/ByfNxRPcs8ZcGAsyv.stage.js" async></script>
+
+  <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
+  <script>
+    CleverPush = window.CleverPush || [];
+    CleverPush.init({
+      channelId: 'ByfNxRPcs8ZcGAsyv', // replace with channel ID from cleverpush-app
+      apiEndpoint: 'https://api-stage.cleverpush.com',
+      loadIframe: false,
+      autoRegister: true,
+      showNotificationBell: true,
+    });
+  </script>
+</body>
+
 </html>
