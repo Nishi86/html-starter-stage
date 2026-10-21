@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Embedded notification editor</title>
+  <style>
+    body { font-family: sans-serif; margin: 16px; }
+    iframe { width: 100%; height: 720px; border: 1px solid #ccc; }
+    pre { background: #f6f6f6; padding: 12px; overflow: auto; }
+    button { margin-right: 8px; }
+  </style>
+</head>
+<body>
+  <p>
+    <button type="button" id="defaults">Load channel defaults</button>
+    <button type="button" id="existing">Load existing 15 min setting</button>
+    <button type="button" id="read">Read editor state</button>
+  </p>
+  <iframe id="editor" src="https://stage.cleverpush.com/notification-editor/embed"></iframe>
+  <h3>Balanced delivery from the editor</h3>
+  <pre id="log">Waiting for the editor…</pre>
+
+  <script>
+    const API_KEY = 'KiPzSHXMXNiXkdNozYQaTQC6H5hBKAcj';
+    const CHANNEL_ID = 'X4Eez4xGFN2KRMK3j';
+
+    const iframe = document.getElementById('editor');
+    const logNode = document.getElementById('log');
+
+    const send = (message) => {
+      iframe.contentWindow.postMessage(message, '*');
+    };
+
+    const load = (notification) => {
+      send({
+        type: 'CP_SET_DATA',
+        apiKey: KiPzSHXMXNiXkdNozYQaTQC6H5hBKAcj,
+        channelId: X4Eez4xGFN2KRMK3j,
+        name: 'Test template',
+        notification: notification || {
+          title: 'Hello',
+          text: 'World',
+          url: 'https://example.com'
+        }
+      });
+    };
+
+    document.getElementById('defaults').onclick = () => load();
+
+    document.getElementById('existing').onclick = () => load({
+      title: 'Saved',
+      text: 'Already configured',
+      url: 'https://example.com',
+      balancedDelivery: true,
+      balancedDeliveryType: 'balancedDeliveryMinutes',
+      balancedDeliveryMinutes: 15
+    });
+
+    document.getElementById('read').onclick = () => send({ type: 'CP_GET_DATA' });
+
+    window.addEventListener('message', (event) => {
+      if (!event.data || !event.data.type) return;
+
+      if (event.data.type === 'CP_READY') {
+        load();
+        return;
+      }
+
+      if (event.data.type === 'CP_ON_SAVE') {
+        send({ type: 'CP_GET_DATA' });
+        return;
+      }
+
+      if (event.data.type === 'CP_GET_DATA') {
+        const notification = event.data.notification || {};
+        logNode.textContent = JSON.stringify({
+          balancedDelivery: notification.balancedDelivery,
+          balancedDeliveryType: notification.balancedDeliveryType,
+          balancedDeliveryMinutes: notification.balancedDeliveryMinutes,
+          balancedDeliverySendings: notification.balancedDeliverySendings
+        }, null, 2);
+      }
+    });
+  </script>
+</body>
+</html>
