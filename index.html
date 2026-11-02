@@ -65,6 +65,7 @@
 
   <script src="https://static.cleverpush.com/sdk/cleverpush.stage.js"></script>
   <script>
+    
     localStorage.setItem('cleverpush-notification-id', 'wLtfcSmXNbuEFjCFs');
     CleverPush = window.CleverPush || [];
     CleverPush.init({
@@ -74,7 +75,11 @@
       autoRegister: true,
       showNotificationBell: true,
     });
+    <button type="button" onclick="CleverPush.push(['trackEvent', 'add_to_cart'])">
+  Add to Cart
+</button>
     CleverPush.push(['trackEvent', 'Shopping']);
+    
   </script>
 </body>
 
